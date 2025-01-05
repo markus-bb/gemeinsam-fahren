@@ -1,3 +1,18 @@
+<?php
+$correctPassword = "test123"; // Set your password here
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $password = $_POST['password'];
+    if ($password !== $correctPassword) {
+        header('Location: login.html');
+        exit();
+    }
+} else {
+    header('Location: login.html');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
